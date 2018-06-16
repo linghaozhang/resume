@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './index.less';
-import netWork from '../Services/index';
+import netWork from '../Services/fetch';
 import MyBaseInfo from './../Component/MyBaseInfo/index';
 import MyIntroduce from './../Component/MyIntroduce/index';
 import MyExperience from './../Component/MyExperience/index';
