@@ -1,4 +1,5 @@
 import React from 'react';
+import Cube from './../Cube/index'
 
 let MyBaseInfo=()=>{
     return (
@@ -9,7 +10,8 @@ let MyBaseInfo=()=>{
                 <header className="header">
                     <div className="header-box">
                         <div className="avatar wow inShow no-print">
-                            <img src="/static/images/logo.jpg" alt="logo" className="img-responsive"/>
+                            {/*<img src="/static/images/logo.jpg" alt="logo" className="img-responsive"/>*/}
+                            <Cube/>
                         </div>
                         <h1 className="name text-center wow inShow no-print">wesley return</h1>
                         <h1 className="name text-center hide show-print-block">wang</h1>
