@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
+import React, {Component} from 'react';
 import './index.less';
+import netWork from '../Services/index';
+import MyBaseInfo from './../Component/MyBaseInfo/index';
+import MyIntroduce from './../Component/MyIntroduce/index';
+import MyExperience from './../Component/MyExperience/index';
+import MySkills from './../Component/MySkills/index';
+import MyProjectExp from './../Component/MyProjectExp/index';
+import MyUsually from './../Component/MyUsually/index';
+import MyContact from './../Component/MyContact/index';
+import ViewOnGithub from './../Component/ViewOnGithub/index';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+// import Loading from './../Loading/index'
+class Resume extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+    componentDidMount() {
+        netWork.get(['resume']).then(res => {
+            console.log(res);
+        })
+    }
+    render() {
+        return (
+            <div className="Resume">
+                <div className="main-container">
+                    <ViewOnGithub/>
+                    <MyBaseInfo/>
+                    <MyIntroduce/>
+                    <MyExperience/>
+                    <MySkills/>
+                    <MyProjectExp/>
+                    <MyUsually/>
+                    <MyContact/>
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+export default Resume;
