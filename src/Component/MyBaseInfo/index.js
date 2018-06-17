@@ -73,11 +73,8 @@ let MyBaseInfo = ({baseInfo}) => {
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
-                                    <a className="item wow inShow" data-wow-delay="0.7s" target="_blank"
-                                       href={baseInfo.webSite || '#'}>
-                                        <h4>Website</h4>
-                                        <div className="info">{filter(baseInfo.webSite)}</div>
-                                    </a>
+                                        <h4>Email</h4>
+                                        <div className="info">{filter(baseInfo.email)}</div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
                                     <a className="item wow inShow" data-wow-delay="0.75s" target="_blank"
