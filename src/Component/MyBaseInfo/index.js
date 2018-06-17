@@ -1,7 +1,8 @@
 import React from 'react';
 import Cube from './../Cube/index'
+import {filter} from "../../Util/tool";
 
-let MyBaseInfo=()=>{
+let MyBaseInfo = ({baseInfo}) => {
     return (
         <div className="section section-header">
             <div className="section-bg section-header-bg"></div>
@@ -10,11 +11,10 @@ let MyBaseInfo=()=>{
                 <header className="header">
                     <div className="header-box">
                         <div className="avatar wow inShow no-print">
-                            {/*<img src="/static/images/logo.jpg" alt="logo" className="img-responsive"/>*/}
                             <Cube/>
                         </div>
-                        <h1 className="name text-center wow inShow no-print">wesley return</h1>
-                        <h1 className="name text-center hide show-print-block">wang</h1>
+                        <h1 className="name text-center wow inShow no-print">{filter(baseInfo.nikeName)}</h1>
+                        <h1 className="name text-center hide show-print-block">{filter(baseInfo.firstName) + filter(baseInfo.lastName)}</h1>
                     </div>
                 </header>
                 <div className="section-content">
@@ -22,10 +22,11 @@ let MyBaseInfo=()=>{
                         <div className="name-slogan">
                             <h2 className="wow inShow no-print" data-wow-delay="0.1s">
                                             <span
-                                                className="text-light">wesley</span>&nbsp;userInfo.firstName
+                                                className="text-light">{filter(baseInfo.firstName)}</span>&nbsp;
+                                {filter(baseInfo.lastName)}
                             </h2>
                             <div className="description wow inShow"
-                                 data-wow-delay="0.15s">userInfo.slogan
+                                 data-wow-delay="0.15s">{filter(baseInfo.nameFootNote)}
                             </div>
                         </div>
                         <div className="contact-info">
@@ -33,19 +34,19 @@ let MyBaseInfo=()=>{
                                 <div className="col-md-6 col-lg-3">
                                     <div className="item wow inShow" data-wow-delay="0.3s">
                                         <h4>性别</h4>
-                                        <div className="info">userInfo.sex</div>
+                                        <div className="info">{filter(baseInfo.gender)}</div>
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
                                     <div className="item wow inShow" data-wow-delay="0.45s">
                                         <h4>年龄</h4>
-                                        <div className="info">calcDate(userInfo.birthday)</div>
+                                        <div className="info">{filter(baseInfo.age)}</div>
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
                                     <div className="item wow inShow" data-wow-delay="0.5s">
                                         <h4>学历</h4>
-                                        <div className="info">userInfo.education</div>
+                                        <div className="info">{filter(baseInfo.education)}</div>
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
@@ -53,9 +54,7 @@ let MyBaseInfo=()=>{
                                        data-wow-delay="0.55s" target="_blank">
                                         <h4>经验</h4>
                                         <div
-                                            className="info">userInfo.exp[0] + (calcDate(userInfo.workSince)
-                                            - 1) + userInfo.exp[1] + calcDate(userInfo.workSince) +
-                                            userInfo.exp[2]
+                                            className="info">{filter(baseInfo.exp)}
                                         </div>
                                     </a>
                                 </div>
@@ -64,25 +63,27 @@ let MyBaseInfo=()=>{
                                 <div className="col-md-6 col-lg-3">
                                     <div className="item wow inShow" data-wow-delay="0.6s">
                                         <h4>Phone</h4>
-                                        <address className="info">userInfo.phone</address>
+                                        <address className="info">{filter(baseInfo.phone)}</address>
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
                                     <div className="item wow inShow" data-wow-delay="0.65s">
                                         <h4>QQ</h4>
-                                        <div className="info">userInfo.qq.number</div>
+                                        <div className="info">{filter(baseInfo.QQ)}</div>
                                     </div>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
-                                    <a className="item wow inShow" data-wow-delay="0.7s" target="_blank">
+                                    <a className="item wow inShow" data-wow-delay="0.7s" target="_blank"
+                                       href={baseInfo.webSite || '#'}>
                                         <h4>Website</h4>
-                                        <div className="info">userInfo.website</div>
+                                        <div className="info">{filter(baseInfo.webSite)}</div>
                                     </a>
                                 </div>
                                 <div className="col-md-6 col-lg-3">
-                                    <a className="item wow inShow" data-wow-delay="0.75s" target="_blank">
+                                    <a className="item wow inShow" data-wow-delay="0.75s" target="_blank"
+                                       href={baseInfo.gitHub || '#'}>
                                         <h4>Github</h4>
-                                        <div className="info">userInfo.github</div>
+                                        <div className="info">{filter(baseInfo.gitHub)}</div>
                                     </a>
                                 </div>
                             </div>

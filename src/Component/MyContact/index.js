@@ -1,6 +1,6 @@
 import React from 'react';
 
-let MyContact=(props)=>{
+let MyContact=({baseInfo})=>{
     return(
         <div className="section no-print">
             <div className="container">
@@ -20,34 +20,34 @@ let MyContact=(props)=>{
                             <div className="col-md-6 col-lg-3">
                                 <div className="item">
                                     <h4>Phone</h4>
-                                    <div className="info">userInfo.phone</div>
+                                    <div className="info">{baseInfo.phone}</div>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-3">
                                 <div className="item">
                                     <h4>QQ</h4>
-                                    <div className="info">userInfo.qq.number</div>
+                                    <div className="info">{baseInfo.QQ}</div>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-3">
                                 <div className="item">
                                     <h4>Location</h4>
-                                    <div className="info">userInfo.location</div>
+                                    <div className="info">{baseInfo.location}</div>
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-3">
                                 <a className="item">
                                     <h4>Email</h4>
-                                    <div className="info">userInfo.email</div>
+                                    <div className="info">{baseInfo.email}</div>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div className="name-slogan">
                         <h2 className="wow inShow">
-                            <span className="text-light">userInfo.lastName</span>&nbsp;userInfo.firstName
+                            <span className="text-light">{baseInfo.firstName}</span>&nbsp;{baseInfo.lastName}
                         </h2>
-                        <div className="description wow inShow" data-wow-delay="0.05s">userInfo.slogan</div>
+                        <div className="description wow inShow" data-wow-delay="0.05s">{baseInfo.nameFootNote}</div>
                     </div>
                 </div>
             </div>

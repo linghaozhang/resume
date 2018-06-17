@@ -5,34 +5,53 @@ import MyBaseInfo from './../Component/MyBaseInfo/index';
 import MyIntroduce from './../Component/MyIntroduce/index';
 import MyExperience from './../Component/MyExperience/index';
 import MySkills from './../Component/MySkills/index';
-import MyProjectExp from './../Component/MyProjectExp/index';
 import MyUsually from './../Component/MyUsually/index';
 import MyContact from './../Component/MyContact/index';
+import ResumeIntroduce from './../Component/ResumeIntroduce/index';
 import ViewOnGithub from './../Component/ViewOnGithub/index';
-
 // import Loading from './../Loading/index'
 class Resume extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            baseInfo: {},
+            introduce:{},
+            experience:[],
+            skill:[],
+            usually:[],
+            resumeIntroduce:{}
+        }
     }
     componentDidMount() {
         netWork.get(['resume']).then(res => {
-            console.log(res);
+            if(res.success){
+                let {baseInfo,introduce,experience,skill,usually,resumeIntroduce}=res.data;
+                this.setState({
+                    baseInfo,
+                    introduce,
+                    experience,
+                    skill,
+                    usually,
+                    resumeIntroduce
+                })
+            }else{
+                console.log('请求出错请稍后再试')
+            }
         })
     }
     render() {
+        let {baseInfo,introduce,experience,skill,usually,resumeIntroduce}=this.state;
         return (
             <div className="Resume">
                 <div className="main-container">
                     <ViewOnGithub/>
-                    <MyBaseInfo/>
-                    <MyIntroduce/>
-                    <MyExperience/>
-                    <MySkills/>
-                    <MyProjectExp/>
-                    <MyUsually/>
-                    <MyContact/>
+                    <MyBaseInfo baseInfo={baseInfo}/>
+                    <MyIntroduce introduce={introduce}/>
+                    <MyExperience experience={experience}/>
+                    <MySkills skill={skill}/>
+                    <MyUsually usually={usually}/>
+                    <ResumeIntroduce resumeIntroduce={resumeIntroduce}/>
+                    <MyContact baseInfo={baseInfo}/>
                 </div>
             </div>
         );

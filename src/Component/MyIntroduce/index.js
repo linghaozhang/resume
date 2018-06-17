@@ -1,6 +1,6 @@
 import React from 'react';
 
-let MyIntroduce=()=>{
+let MyIntroduce=({introduce})=>{
     return (
         <div className="section">
             <div className="container">
@@ -16,12 +16,12 @@ let MyIntroduce=()=>{
                 </header>
                 <div className="section-content">
                     <div className="intro">
-                        <p v-for="intro in userInfo.intro.content" v-html="intro"></p>
+                        {(introduce.content||[]).map((i,n)=><p key={`${n}intro`}>{i}</p>)}
                     </div>
                     <div className="technology">
                         <ul className="inline">
-                            <li><b>userInfo.intro.technology.title</b></li>
-                            <li v-for="item in userInfo.intro.technology.content">item</li>
+                            <li><b>使用过的技术栈</b></li>
+                            {(introduce.tech||[]).map((i,n)=><li key={`${n}tech`}>{i}</li>)}
                         </ul>
                     </div>
                 </div>

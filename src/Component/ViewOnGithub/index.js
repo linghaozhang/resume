@@ -3,10 +3,10 @@ import Start from './../Start/index'
 let ViewOnGithub = (props) => {
     return (
         <div className="useful-link no-print">
-            <a className="github-button" href="https://github.com/eternityspring/eternityspring.github.io"
+            <a className="github-button" href="https://github.com/linghaozhang/resume"
                title="查看源码">
                 <Start/>
-                <span>Star</span>
+                <span>View on Github</span>
             </a>
         </div>
     )

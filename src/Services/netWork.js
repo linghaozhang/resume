@@ -9,7 +9,7 @@ const checkStatus = function (res) {
             console.log('Status:500');
             break;
         case 404:
-            console.log('Status:500');
+            console.log('Status:404');
             break;
         default:
             return res;

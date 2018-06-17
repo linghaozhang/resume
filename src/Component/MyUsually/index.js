@@ -1,6 +1,6 @@
 import React from 'react';
 
-let MyUsually=()=>{
+let MyUsually=({usually})=>{
     return(
         <div className="section">
             <div className="container">
@@ -16,18 +16,15 @@ let MyUsually=()=>{
                 </header>
                 <div className="section-content">
                     <div className="row usually">
-                        <div className="col-lg-4 col-md-6" v-for="u in userInfo.usually">
-                            <a v-if="u.link" target="_blank" className="item">
-                                <i className="fa fa-github"></i>
-                                <h3 className="text-light">u.name</h3>
-                                <p>u.description</p>
-                            </a>
-                            <div v-if="!u.link" className="item">
-                                <i className="fa fa-github"></i>
-                                <h3 className="text-light">u.name</h3>
-                                <p>u.description</p>
+                        {usually.map((i,n)=>(
+                            <div className="col-lg-4 col-md-6">
+                                <div className="item">
+                                    <i className="fa fa-github"></i>
+                                    <h3 className="text-light">{i.name}</h3>
+                                    <p>{i.description}</p>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

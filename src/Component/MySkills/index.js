@@ -1,6 +1,6 @@
 import React from 'react';
 
-let MySkills=()=>{
+let MySkills=({skill})=>{
     return (
         <div className="section">
             <div className="container">
@@ -16,16 +16,18 @@ let MySkills=()=>{
                 </header>
                 <div className="section-content">
                     <div className="row skill">
-                        <div className="col-md-6" v-for="s in userInfo.skill">
-                            <div className="item">
-                                <div className="text-info">
-                                    <span className="num text-light">s.percent</span>s.name
-                                </div>
-                                <div className="progress">
-                                    <div className="progress-bar wow progressShow"></div>
+                        {skill.map((i,n)=>(
+                            <div className="col-md-6" key={`${n}skill`}>
+                                <div className="item">
+                                    <div className="text-info">
+                                        <span className="num text-light">{i.percent}</span>{i.name}
+                                    </div>
+                                    <div className="progress">
+                                        <div className="progress-bar wow progressShow" style={{width:i.percent}}></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
