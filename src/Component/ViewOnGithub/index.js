@@ -3,7 +3,7 @@ import Start from './../Start/index'
 let ViewOnGithub = (props) => {
     return (
         <div className="useful-link no-print">
-            <a className="github-button" href="https://github.com/linghaozhang/resume"
+            <a className="github-button" href="https://github.com/linghaozhang/resume" target="_blank"
                title="查看源码">
                 <Start/>
                 <span>View on Github</span>
