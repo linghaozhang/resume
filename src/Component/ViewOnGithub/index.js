@@ -1,5 +1,5 @@
 import React from 'react';
-import Start from './../Start/index'
+import Start from '../Star/index'
 let ViewOnGithub = (props) => {
     return (
         <div className="useful-link no-print">

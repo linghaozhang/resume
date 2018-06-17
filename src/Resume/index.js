@@ -34,7 +34,7 @@ class Resume extends Component {
                     skill,
                     usually,
                     resumeIntroduce,
-                    loadingShow:true
+                    loadingShow:false
                 })
             }else{
                 console.log('请求出错请稍后再试')
