@@ -17,7 +17,7 @@ let MyUsually=({usually})=>{
                 <div className="section-content">
                     <div className="row usually">
                         {usually.map((i,n)=>(
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-4 col-md-6" key={`${n}usually`}>
                                 <div className="item">
                                     <i className="fa fa-github"></i>
                                     <h3 className="text-light">{i.name}</h3>

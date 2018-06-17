@@ -9,7 +9,7 @@ import MyUsually from './../Component/MyUsually/index';
 import MyContact from './../Component/MyContact/index';
 import ResumeIntroduce from './../Component/ResumeIntroduce/index';
 import ViewOnGithub from './../Component/ViewOnGithub/index';
-// import Loading from './../Loading/index'
+import Loading from './../Component/Loading/index';
 class Resume extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +19,8 @@ class Resume extends Component {
             experience:[],
             skill:[],
             usually:[],
-            resumeIntroduce:{}
+            resumeIntroduce:{},
+            loadingShow:true
         }
     }
     componentDidMount() {
@@ -32,7 +33,8 @@ class Resume extends Component {
                     experience,
                     skill,
                     usually,
-                    resumeIntroduce
+                    resumeIntroduce,
+                    loadingShow:false
                 })
             }else{
                 console.log('请求出错请稍后再试')
@@ -40,9 +42,10 @@ class Resume extends Component {
         })
     }
     render() {
-        let {baseInfo,introduce,experience,skill,usually,resumeIntroduce}=this.state;
+        let {baseInfo,introduce,experience,skill,usually,resumeIntroduce,loadingShow}=this.state;
         return (
             <div className="Resume">
+                {loadingShow?<Loading/>:
                 <div className="main-container">
                     <ViewOnGithub/>
                     <MyBaseInfo baseInfo={baseInfo}/>
@@ -52,7 +55,7 @@ class Resume extends Component {
                     <MyUsually usually={usually}/>
                     <ResumeIntroduce resumeIntroduce={resumeIntroduce}/>
                     <MyContact baseInfo={baseInfo}/>
-                </div>
+                </div>}
             </div>
         );
     }

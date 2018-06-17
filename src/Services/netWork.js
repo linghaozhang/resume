@@ -17,7 +17,6 @@ const checkStatus = function (res) {
 };
 const jsonParse = function (res) {
     return res.json().then(response => {
-        console.log("fetchResponse", response);
         return response
     });
 };
