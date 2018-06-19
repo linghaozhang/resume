@@ -1,9 +1,8 @@
 import React from 'react';
-import './index.less'
 
 let Cube=()=>{
     return(
-    <div className='wrapper'>
+    <div className='cubeWrapper'>
         <div className='cube'>
             <div className='cube-front'>
             </div>
