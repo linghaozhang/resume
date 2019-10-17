@@ -10,6 +10,7 @@ import MyContact from './../Component/MyContact/index';
 import ResumeIntroduce from './../Component/ResumeIntroduce/index';
 import ViewOnGithub from './../Component/ViewOnGithub/index';
 import Loading from './../Component/Loading/index';
+import mockData from './../MockData/index'
 class Resume extends Component {
     constructor(props) {
         super(props);
@@ -39,6 +40,18 @@ class Resume extends Component {
             }else{
                 console.log('请求出错请稍后再试')
             }
+        }).catch(err=>{
+            console.log(err,'use mockData to render');
+            const {baseInfo,introduce,experience,skill,usually,resumeIntroduce} = mockData.data;
+            this.setState({
+                baseInfo,
+                introduce,
+                experience,
+                skill,
+                usually,
+                resumeIntroduce,
+                loadingShow:false
+            })
         })
     }
     render() {
