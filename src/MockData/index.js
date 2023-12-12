@@ -4,11 +4,11 @@ export default {
             nikeName: 'Walter White',
             firstName: '张',
             lastName: '凌浩',
-            nameFootNote: '一个React技术方向的前端开发者',
+            nameFootNote: '一个Vue,React技术方向的前端开发者',
             gender: '男',
-            age: '28',
+            age: '32',
             education: '专科',
-            exp: '3年前端开发经验',
+            exp: '7年前端开发经验',
             phone: '17612235899',
             QQ: '271793819',
             email: '17612235899@163.com',
@@ -17,18 +17,41 @@ export default {
         },
         introduce: {
             content: [
-                "3年＋的前端开发经验。2年＋的北京React+redux开发经验。参与过内部管理系统开发和电商开发。",
-                "熟悉前端项目构建，有过基于 react 的项目工作经验。",
-                "经常使用 antd 和 less，喜欢逛掘金，SegmentFault，github等开发者社区。",
-                "使用过vue搭建项目环境。",
-                "做过vue开发。",
+                "7年＋的前端开发经验。2年＋的北京React+redux开发经验。参与过内部管理系统开发和电商开发。",
+                "近期独立带队完成大型智慧交通项目",
+                "擅长通用组件库开发，疑难问题公关",
                 "做过小程序开发",
                 "有做过web APP。",
-                "用jest做过前端单测"
+                "用jest做过前端单测",
+                "经常使用 antd 和 less，喜欢逛掘金，SegmentFault，github等开发者社区。",
             ],
             tech: ['react', 'vue', 'redux', 'react-redux', 'dva', 'ES6', 'less', 'antd', 'antd-mobile', 'webpack', 'jquery', 'bootStrap', 'H5', 'git']
         },
-        experience: [{
+        experience: [
+            {
+            time: "",
+            title: "北京易华录信息技术股份有限公司",
+            proTitle: "Eloc信控平台",
+            intro: "高级前端开发",
+            description: "主导了前后分离，整体项目重构",
+            tips: [{
+                title: "主要业绩：",
+                content: [
+                    "平台重构100%",
+                    "开发了核心功能组件",
+                    "封装基础工具函数、组件",
+                    "疑难问题公关。",
+                    "通过严酷测试，如期发布版本",
+                ]
+            }],
+            technology: [{
+                title: "技术栈：",
+                content: [
+                    "vue", "vux", "webpack", "less", "ES6"
+                ]
+            }]
+        },
+            {
             time: "",
             title: "易商阜极科技股份有限公司",
             proTitle: "SCRM",
